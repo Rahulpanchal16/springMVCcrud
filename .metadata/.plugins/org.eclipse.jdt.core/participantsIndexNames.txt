@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+C:\Users\WIN10\Desktop\SpringCRUDproject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1986255137.index
+\SpringCRUDproject\src\main\resources
+C:\Users\WIN10\Desktop\SpringCRUDproject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3336428366.index
+\SpringCRUDproject\src\main\java

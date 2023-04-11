@@ -1,0 +1,18 @@
+package com.crud.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MyCrudController {
+
+	@RequestMapping(path = "/")
+	public String index() {
+		return "index";
+	}
+	
+	@RequestMapping(path="/add-product")
+	public String addProdForm() {
+		return "add_product_form":
+	}
+}
