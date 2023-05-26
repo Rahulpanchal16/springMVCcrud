@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <%@include file="./bootcssjs.jsp"%>
@@ -11,8 +11,12 @@
 	<div class="container mt-3">
 		<div class="row">
 			<div class="col-md-6 offset-md-3">
-				<form action="${pageContext.request.contextPath }/handleproduct" method="post">
+				<form action="${pageContext.request.contextPath }/update-process/"
+					method="post">
 					<h1>Edit your product</h1>
+
+					<input type="text" name="id" value="${prod.id}" />
+
 					<div class="form-group">
 						<label for="name">Product Name</label> <input type="text"
 							class="form-control" id="name" name="name"

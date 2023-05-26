@@ -16,6 +16,10 @@ public class ProductDao {
 	@Autowired
 	private HibernateTemplate hibernateTemplate;
 
+	public ProductDao(HibernateTemplate hibernateTemplate) {
+		this.hibernateTemplate = hibernateTemplate;
+	}
+
 	// Create new product
 	@Transactional
 	public long createProduct(Product product) {
@@ -39,6 +43,11 @@ public class ProductDao {
 	public void deleteProduct(long pid) {
 		Product prod = this.hibernateTemplate.load(Product.class, pid);
 		this.hibernateTemplate.delete(prod);
+	}
+
+	@Transactional
+	public void updateProd(Product prod) {
+		this.hibernateTemplate.saveOrUpdate(prod);
 	}
 
 }

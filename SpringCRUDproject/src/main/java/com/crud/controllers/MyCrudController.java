@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.view.RedirectView;
@@ -63,4 +64,25 @@ public class MyCrudController {
 		model.addAttribute("prod", prod);
 		return "update_form";
 	}
+
+	@RequestMapping(path = "/update-process", method = RequestMethod.POST)
+	public RedirectView updateProcess(@ModelAttribute Product prod,
+			HttpServletRequest request) {
+		Long prodId = prod.getId();
+		Product prodById = this.productDao.getProd(prodId);
+		prodById.setName(prod.getName());
+		prodById.setDescription(prod.getDescription());
+		prodById.setPrice(prod.getPrice());
+		this.productDao.updateProd(prodById);
+//		Product prodById = this.productDao.getProd(id);
+//		prodById.setName(prod.getName());
+//		prodById.setDescription(prod.getDescription());
+//		prodById.setPrice(prod.getPrice());
+//		this.productDao.updateProd(prodById);
+
+		RedirectView view = new RedirectView();
+		view.setUrl(request.getContextPath() + "/");
+		return view;
+	}
+
 }

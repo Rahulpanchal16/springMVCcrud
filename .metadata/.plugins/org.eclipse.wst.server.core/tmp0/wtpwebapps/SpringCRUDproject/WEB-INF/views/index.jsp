@@ -29,8 +29,9 @@
 						<td>${p.name }</td>
 						<td>${p.description }</td>
 						<td>&#x20B9; ${p.price }</td>
-						<td><a href="delete/${p.id }" style="margin-right: 20px;"><i class="fa-sharp fa-solid fa-trash"></i></a> 
-							<a href="update/${p.id }"><i class="fa-regular fa-pen-to-square"></i></a></td>
+						<td><a href="delete/${p.id }" style="margin-right: 20px;"><i
+								class="fa-sharp fa-solid fa-trash"></i></a> <a
+							href="update/${p.id }"><i class="fa-regular fa-pen-to-square"></i></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
